@@ -1,5 +1,7 @@
 # HireLens — Recruitment Marketing Analytics
 
+**Live dashboard:** [hirelens-anujit.streamlit.app](https://hirelens-anujit.streamlit.app/) · [GitHub source](https://github.com/Anujit45X/hirelens)
+
 **Synthetic data — portfolio demonstration.** An independent educational project for a recruitment marketing analytics portfolio. It is not an official Joveo product, is not affiliated with Joveo, and uses no Joveo or personal data.
 
 **Business question:** Which recruitment advertising channels generate qualified applicants most efficiently?
@@ -152,3 +154,4 @@ Verified locally on 5 October 2026 with Python 3.13.3: **18 tests passed**, `pip
 If the database is unavailable/corrupt, stop the app and rerun `python -m scripts.generate_data`. Use `--seed 43 --database data/experiment.db` for a separate experiment; the dashboard continues to read `data/hirelens.db`. No credentials or external services are required.
 
 Implementation references: [Streamlit chart API](https://docs.streamlit.io/develop/api-reference/charts/st.plotly_chart), [Streamlit AppTest](https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest). Business data and model assumptions are entirely generated locally.
+
