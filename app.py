@@ -18,8 +18,14 @@ st.html("""<style>
 
 
 def reset_filters():
-    for key in ("dates", "channels", "roles", "cities"):
-        st.session_state.pop(key, None)
+    # Explicit values keep browser widgets and SQL filters in sync after reset.
+    options = filter_options()
+    st.session_state["dates"] = (
+        date.fromisoformat(options["start"]), date.fromisoformat(options["end"])
+    )
+    st.session_state["channels"] = options["channel"]
+    st.session_state["roles"] = options["role"]
+    st.session_state["cities"] = options["city"]
 
 
 @st.cache_resource
@@ -95,3 +101,4 @@ except (sqlite3.Error, OSError) as error:
     st.error("HireLens could not read or create its local database. Check folder permissions and regenerate it using: python -m scripts.generate_data")
     st.code(str(error))
     st.stop()
+
